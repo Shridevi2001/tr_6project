@@ -1,5 +1,6 @@
 import pymongo
 from pylogix import PLC
+#
 
 client = client=pymongo.MongoClient("mongodb://localhost:27017/")
 
@@ -11,6 +12,7 @@ if "TR6pro" in databaselist:
 else:
     databasename = client["TR6pro"]
     collection = databasename.create_collection("Status")
+
     document = {"_id":"12345"}
     collection.insert_one(document)
 
